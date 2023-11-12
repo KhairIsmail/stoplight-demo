@@ -12,7 +12,7 @@ properties:
     x-stoplight:
       id: keoq11crwvpbd
     minLength: 20
-    description: description of the error
+    description: description of the error.
 required:
   - code
   - description
