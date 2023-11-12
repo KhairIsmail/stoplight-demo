@@ -1,0 +1,21 @@
+title: weather
+x-stoplight:
+  id: ttw1i5f1f6mfd
+type: object
+properties:
+  type:
+    type: string
+    x-stoplight:
+      id: 01rnae3dqvmwm
+  setup:
+    type: string
+    x-stoplight:
+      id: h7lz1awvsq7yw
+  punchline:
+    type: string
+    x-stoplight:
+      id: frrj2mvjlt38p
+  id:
+    type: number
+    x-stoplight:
+      id: 79wnmm8l5efn5

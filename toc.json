@@ -1,0 +1,14 @@
+{
+  "collapseTableOfContents": false,
+  "items": [
+    {
+      "type": "divider",
+      "title": "APIS"
+    },
+    {
+      "type": "item",
+      "title": "Swagger Petstore - OpenAPI 3.0",
+      "uri": "/src/main/resources/petstore-api.yaml"
+    }
+  ]
+}

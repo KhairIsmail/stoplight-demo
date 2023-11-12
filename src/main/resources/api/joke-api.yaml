@@ -1,0 +1,43 @@
+openapi: 3.1.0
+x-stoplight:
+  id: fsuow9pemrwpn
+info:
+  title: weather-api
+  version: '1.0'
+  summary: This is a weather API
+  description: This is a weather API
+  contact:
+    name: Mohammad
+    email: mohammad.ismail@sytac.io
+servers:
+  - url: 'https://official-joke-api.appspot.com/'
+paths:
+  /random_joke:
+    parameters: []
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../model/joke.yaml
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: ../model/error.yaml
+      operationId: getJoke
+      x-stoplight:
+        id: gy9ay9n8llxrj
+      description: This endpoint is used to retrieve a joke
+      parameters: []
+      requestBody:
+        content: {}
+components:
+  schemas: {}
+tags:
+  - name: joke

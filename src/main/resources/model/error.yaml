@@ -1,0 +1,18 @@
+title: error
+x-stoplight:
+  id: fdx8mnle9vjzo
+type: object
+properties:
+  code:
+    type: number
+    x-stoplight:
+      id: t1cl3ioc7y5u3
+  description:
+    type: string
+    x-stoplight:
+      id: keoq11crwvpbd
+    minLength: 20
+    description: description of the error
+required:
+  - code
+  - description

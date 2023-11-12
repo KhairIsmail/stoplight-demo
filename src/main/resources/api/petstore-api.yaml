@@ -1,24 +1,27 @@
 openapi: 3.0.2
+x-stoplight:
+  id: 6d728b60a00c5
 info:
   title: Swagger Petstore - OpenAPI 3.0
-  description: "This is a sample Pet Store Server based on the OpenAPI 3.0 specification.\
-    \  You can find out more about\nSwagger at [http://swagger.io](http://swagger.io).\
-    \ In the third iteration of the pet store, we've switched to the design first\
-    \ approach!\nYou can now help us improve the API whether it's by making changes\
-    \ to the definition itself or to the code.\nThat way, with time, we can improve\
-    \ the API in general, and expose some of the new features in OAS3.\n\nSome useful\
-    \ links:\n- [The Pet Store repository](https://github.com/swagger-api/swagger-petstore)\n\
-    - [The source API definition for the Pet Store](https://github.com/swagger-api/swagger-petstore/blob/master/src/main/resources/openapi.yaml)"
-  termsOfService: http://swagger.io/terms/
+  description: |-
+    This is a sample Pet Store Server based on the OpenAPI 3.0 specification.  You can find out more about
+    Swagger at [http://swagger.io](http://swagger.io). In the third iteration of the pet store, we've switched to the design first approach!
+    You can now help us improve the API whether it's by making changes to the definition itself or to the code.
+    That way, with time, we can improve the API in general, and expose some of the new features in OAS3.
+
+    Some useful links:
+    - [The Pet Store repository](https://github.com/swagger-api/swagger-petstore)
+    - [The source API definition for the Pet Store](https://github.com/swagger-api/swagger-petstore/blob/master/src/main/resources/openapi.yaml)
+  termsOfService: 'http://swagger.io/terms/'
   contact:
     email: apiteam@swagger.io
   license:
     name: Apache 2.0
-    url: http://www.apache.org/licenses/LICENSE-2.0.html
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
   version: 1.0.17
 externalDocs:
   description: Find out more about Swagger
-  url: http://swagger.io
+  url: 'http://swagger.io'
 servers:
   - url: /api/v3
 tags:
@@ -26,12 +29,12 @@ tags:
     description: Everything about your Pets
     externalDocs:
       description: Find out more
-      url: http://swagger.io
+      url: 'http://swagger.io'
   - name: store
     description: Access to Petstore orders
     externalDocs:
       description: Find out more about our store
-      url: http://swagger.io
+      url: 'http://swagger.io'
   - name: user
     description: Operations about user
 paths:
@@ -56,7 +59,7 @@ paths:
               $ref: '#/components/schemas/Pet'
         required: true
       responses:
-        "200":
+        '200':
           description: Successful operation
           content:
             application/xml:
@@ -65,16 +68,18 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Pet'
-        "400":
+        '400':
           description: Invalid ID supplied
-        "404":
+        '404':
           description: Pet not found
-        "405":
+        '405':
           description: Validation exception
       security:
         - petstore_auth:
-            - write:pets
-            - read:pets
+            - 'write:pets'
+            - 'read:pets'
+      x-stoplight:
+        id: md9zi0frfn3te
     post:
       tags:
         - pet
@@ -95,7 +100,7 @@ paths:
               $ref: '#/components/schemas/Pet'
         required: true
       responses:
-        "200":
+        '200':
           description: Successful operation
           content:
             application/xml:
@@ -104,12 +109,14 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Pet'
-        "405":
+        '405':
           description: Invalid input
       security:
         - petstore_auth:
-            - write:pets
-            - read:pets
+            - 'write:pets'
+            - 'read:pets'
+      x-stoplight:
+        id: ik5890otv5lgi
   /pet/findByStatus:
     get:
       tags:
@@ -131,7 +138,7 @@ paths:
               - pending
               - sold
       responses:
-        "200":
+        '200':
           description: successful operation
           content:
             application/xml:
@@ -144,19 +151,20 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Pet'
-        "400":
+        '400':
           description: Invalid status value
       security:
         - petstore_auth:
-            - write:pets
-            - read:pets
+            - 'write:pets'
+            - 'read:pets'
+      x-stoplight:
+        id: hoay1du0q5voa
   /pet/findByTags:
     get:
       tags:
         - pet
       summary: Finds Pets by tags
-      description: "Multiple tags can be provided with comma separated strings. Use\
-        \ tag1, tag2, tag3 for testing."
+      description: 'Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.'
       operationId: findPetsByTags
       parameters:
         - name: tags
@@ -169,7 +177,7 @@ paths:
             items:
               type: string
       responses:
-        "200":
+        '200':
           description: successful operation
           content:
             application/xml:
@@ -182,13 +190,15 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Pet'
-        "400":
+        '400':
           description: Invalid tag value
       security:
         - petstore_auth:
-            - write:pets
-            - read:pets
-  /pet/{petId}:
+            - 'write:pets'
+            - 'read:pets'
+      x-stoplight:
+        id: v47x90s3bvll4
+  '/pet/{petId}':
     get:
       tags:
         - pet
@@ -204,7 +214,7 @@ paths:
             type: integer
             format: int64
       responses:
-        "200":
+        '200':
           description: successful operation
           content:
             application/xml:
@@ -213,20 +223,22 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Pet'
-        "400":
+        '400':
           description: Invalid ID supplied
-        "404":
+        '404':
           description: Pet not found
       security:
         - api_key: []
         - petstore_auth:
-            - write:pets
-            - read:pets
+            - 'write:pets'
+            - 'read:pets'
+      x-stoplight:
+        id: pvirhpzhmugun
     post:
       tags:
         - pet
       summary: Updates a pet in the store with form data
-      description: ""
+      description: ''
       operationId: updatePetWithForm
       parameters:
         - name: petId
@@ -247,22 +259,24 @@ paths:
           schema:
             type: string
       responses:
-        "405":
+        '405':
           description: Invalid input
       security:
         - petstore_auth:
-            - write:pets
-            - read:pets
+            - 'write:pets'
+            - 'read:pets'
+      x-stoplight:
+        id: ilj3xtlo96hb2
     delete:
       tags:
         - pet
       summary: Deletes a pet
-      description: ""
+      description: ''
       operationId: deletePet
       parameters:
         - name: api_key
           in: header
-          description: ""
+          description: ''
           required: false
           schema:
             type: string
@@ -274,18 +288,20 @@ paths:
             type: integer
             format: int64
       responses:
-        "400":
+        '400':
           description: Invalid pet value
       security:
         - petstore_auth:
-            - write:pets
-            - read:pets
-  /pet/{petId}/uploadImage:
+            - 'write:pets'
+            - 'read:pets'
+      x-stoplight:
+        id: ljwmy5urcsfkq
+  '/pet/{petId}/uploadImage':
     post:
       tags:
         - pet
       summary: uploads an image
-      description: ""
+      description: ''
       operationId: uploadFile
       parameters:
         - name: petId
@@ -308,7 +324,7 @@ paths:
               type: string
               format: binary
       responses:
-        "200":
+        '200':
           description: successful operation
           content:
             application/json:
@@ -316,8 +332,10 @@ paths:
                 $ref: '#/components/schemas/ApiResponse'
       security:
         - petstore_auth:
-            - write:pets
-            - read:pets
+            - 'write:pets'
+            - 'read:pets'
+      x-stoplight:
+        id: zavxzrzpvl5p3
   /store/inventory:
     get:
       tags:
@@ -326,7 +344,7 @@ paths:
       description: Returns a map of status codes to quantities
       operationId: getInventory
       responses:
-        "200":
+        '200':
           description: successful operation
           content:
             application/json:
@@ -337,6 +355,8 @@ paths:
                   format: int32
       security:
         - api_key: []
+      x-stoplight:
+        id: klo9vqqrh4t2o
   /store/order:
     post:
       tags:
@@ -356,21 +376,22 @@ paths:
             schema:
               $ref: '#/components/schemas/Order'
       responses:
-        "200":
+        '200':
           description: successful operation
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Order'
-        "405":
+        '405':
           description: Invalid input
-  /store/order/{orderId}:
+      x-stoplight:
+        id: z5tm7e7ypggra
+  '/store/order/{orderId}':
     get:
       tags:
         - store
       summary: Find purchase order by ID
-      description: For valid response try integer IDs with value <= 5 or > 10. Other
-        values will generate exceptions.
+      description: For valid response try integer IDs with value <= 5 or > 10. Other values will generate exceptions.
       operationId: getOrderById
       parameters:
         - name: orderId
@@ -381,7 +402,7 @@ paths:
             type: integer
             format: int64
       responses:
-        "200":
+        '200':
           description: successful operation
           content:
             application/xml:
@@ -390,16 +411,17 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Order'
-        "400":
+        '400':
           description: Invalid ID supplied
-        "404":
+        '404':
           description: Order not found
+      x-stoplight:
+        id: rg7dyzxv6klwi
     delete:
       tags:
         - store
       summary: Delete purchase order by ID
-      description: For valid response try integer IDs with value < 1000. Anything
-        above 1000 or nonintegers will generate API errors
+      description: For valid response try integer IDs with value < 1000. Anything above 1000 or nonintegers will generate API errors
       operationId: deleteOrder
       parameters:
         - name: orderId
@@ -410,10 +432,12 @@ paths:
             type: integer
             format: int64
       responses:
-        "400":
+        '400':
           description: Invalid ID supplied
-        "404":
+        '404':
           description: Order not found
+      x-stoplight:
+        id: e5vzidp8j83ta
   /user:
     post:
       tags:
@@ -443,6 +467,8 @@ paths:
             application/xml:
               schema:
                 $ref: '#/components/schemas/User'
+      x-stoplight:
+        id: m0lgdpll19k23
   /user/createWithList:
     post:
       tags:
@@ -458,7 +484,7 @@ paths:
               items:
                 $ref: '#/components/schemas/User'
       responses:
-        "200":
+        '200':
           description: Successful operation
           content:
             application/xml:
@@ -469,12 +495,14 @@ paths:
                 $ref: '#/components/schemas/User'
         default:
           description: successful operation
+      x-stoplight:
+        id: 0dllxxk3ak2ir
   /user/login:
     get:
       tags:
         - user
       summary: Logs user into the system
-      description: ""
+      description: ''
       operationId: loginUser
       parameters:
         - name: username
@@ -490,7 +518,7 @@ paths:
           schema:
             type: string
       responses:
-        "200":
+        '200':
           description: successful operation
           headers:
             X-Rate-Limit:
@@ -510,25 +538,29 @@ paths:
             application/json:
               schema:
                 type: string
-        "400":
+        '400':
           description: Invalid username/password supplied
+      x-stoplight:
+        id: u8wrv2rrz2lqt
   /user/logout:
     get:
       tags:
         - user
       summary: Logs out current logged in user session
-      description: ""
+      description: ''
       operationId: logoutUser
       parameters: []
       responses:
         default:
           description: successful operation
-  /user/{username}:
+      x-stoplight:
+        id: vdg2z3o8947px
+  '/user/{username}':
     get:
       tags:
         - user
       summary: Get user by user name
-      description: ""
+      description: ''
       operationId: getUserByName
       parameters:
         - name: username
@@ -538,7 +570,7 @@ paths:
           schema:
             type: string
       responses:
-        "200":
+        '200':
           description: successful operation
           content:
             application/xml:
@@ -547,10 +579,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/User'
-        "400":
+        '400':
           description: Invalid username supplied
-        "404":
+        '404':
           description: User not found
+      x-stoplight:
+        id: z91nyy4pt5m46
     put:
       tags:
         - user
@@ -579,6 +613,8 @@ paths:
       responses:
         default:
           description: successful operation
+      x-stoplight:
+        id: b9hgg8wfrobt9
     delete:
       tags:
         - user
@@ -593,10 +629,12 @@ paths:
           schema:
             type: string
       responses:
-        "400":
+        '400':
           description: Invalid username supplied
-        "404":
+        '404':
           description: User not found
+      x-stoplight:
+        id: htlqszx3c6wyh
 components:
   schemas:
     Order:
@@ -629,6 +667,8 @@ components:
           type: boolean
       xml:
         name: order
+      x-stoplight:
+        id: tez4yzc5xv8bw
     Customer:
       type: object
       properties:
@@ -648,6 +688,8 @@ components:
             $ref: '#/components/schemas/Address'
       xml:
         name: customer
+      x-stoplight:
+        id: s83d1mr46wmyp
     Address:
       type: object
       properties:
@@ -662,9 +704,11 @@ components:
           example: CA
         zip:
           type: string
-          example: "94301"
+          example: '94301'
       xml:
         name: address
+      x-stoplight:
+        id: woac03vvzyvqf
     Category:
       type: object
       properties:
@@ -677,6 +721,8 @@ components:
           example: Dogs
       xml:
         name: category
+      x-stoplight:
+        id: srdtjjnprssxy
     User:
       type: object
       properties:
@@ -698,10 +744,10 @@ components:
           example: john@email.com
         password:
           type: string
-          example: "12345"
+          example: '12345'
         phone:
           type: string
-          example: "12345"
+          example: '12345'
         userStatus:
           type: integer
           description: User Status
@@ -709,6 +755,8 @@ components:
           example: 1
       xml:
         name: user
+      x-stoplight:
+        id: 2ash9bhgg6vvq
     Tag:
       type: object
       properties:
@@ -719,6 +767,8 @@ components:
           type: string
       xml:
         name: tag
+      x-stoplight:
+        id: laak2pwfbpyqk
     Pet:
       required:
         - name
@@ -757,6 +807,8 @@ components:
             - sold
       xml:
         name: pet
+      x-stoplight:
+        id: k0vzmte90auqb
     ApiResponse:
       type: object
       properties:
@@ -769,6 +821,8 @@ components:
           type: string
       xml:
         name: '##default'
+      x-stoplight:
+        id: 72ot63i0so88e
   requestBodies:
     Pet:
       description: Pet object that needs to be added to the store
@@ -792,11 +846,12 @@ components:
       type: oauth2
       flows:
         implicit:
-          authorizationUrl: https://petstore3.swagger.io/oauth/authorize
+          authorizationUrl: 'https://petstore3.swagger.io/oauth/authorize'
           scopes:
-            write:pets: modify pets in your account
-            read:pets: read your pets
+            'write:pets': modify pets in your account
+            'read:pets': read your pets
     api_key:
       type: apiKey
       name: api_key
       in: header
+x-internal: false
